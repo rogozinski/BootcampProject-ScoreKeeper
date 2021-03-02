@@ -8,19 +8,30 @@ const p2Button = document.querySelector("#p2Button");
 const p2Display = document.querySelector("#p2Display");
 let p2Score = 0;
 
-//Reset Scores and scores display
+//we can keep adding points until it one of the player score reach winningScore. After than isGameOver is set to true which disabling possibility to add more points
+let winningScore = parseInt(winningScoreSelect.value);
+let isGameOver = false;
+
+//Play to
+const winningScoreSelect = document.querySelector("#playTo");
+winningScoreSelect.addEventListener("change", function () {
+    winningScore = parseInt(this.value);
+    reset();
+});
+
+//Reset button
 const resetButton = document.querySelector("#resetButton");
-resetButton.addEventListener("click", function () {
+resetButton.addEventListener("click", reset);
+
+//function that resets Scores and scores display
+function reset() {
     isGameOver = false; //set isGameOver to deufalt state which is true
     p1Score = 0; //reset Player 1's score and display
     p1Display.textContent = 0;
     p2Score = 0; //reset Player 2's score and display
     p2Display.textContent = 0;
-});
+}
 
-//we can keep adding points until it one of the player score reach winningScore. After than isGameOver is set to true which disabling possibility to add more points
-let winningScore = 5;
-let isGameOver = false;
 
 p1Button.addEventListener("click", function () {
     if (!isGameOver) {
