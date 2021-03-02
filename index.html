@@ -4,33 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Table tennis - Score Keeper</title>
-    <style>
-        .winner {
-            color: green;
-        }
-
-        .loser {
-            color: red;
-        }
-    </style>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 
 <body>
-    <h1><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">PingPing Score Keeper</p>
+                        </header>
+                        <div class="card-image">
+                            <figure class="image is-2by1">
+                                <img src="https://images.unsplash.com/photo-1576617497557-22895ee5930b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGluZyUyMHBvbmd8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                    alt="img1">
+                            </figure>
+                        </div>
 
-    <select name="" id="playTo">
-        <option value="3">3</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="16">16</option>
-        <option value="21">21</option>
-    </select>
-    <button id="p1Button">+1 Player 1</button>
-    <button id="p2Button">+1 Player 2</button>
-    <button id="resetButton">Reset</button>
+                        <div class="card-content">
+                            <div class="content">
+                                <h1 class="title is-1"><span id="p1Display">0</span> to <span id="p2Display">0</span>
+                                </h1>
+                                <p class="subtitle">Use the buttons below to keep score</p>
+
+                                <label for="playTo" class="label is-large is-inline">Playing to: </label>
+                                <div class="select is-rounded">
+                                    <select name="" id="playTo">
+                                        <option value="3">3</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="16">16</option>
+                                        <option value="21">21</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button id="p1Button" class="is-primary button card-footer-item">+1 Player 1</button>
+                            <button id="p2Button" class="is-info button card-footer-item">+1 Player 2</button>
+                            <button id="resetButton" class="is-danger button card-footer-item">Reset</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <script src="app.js"></script>
 </body>
